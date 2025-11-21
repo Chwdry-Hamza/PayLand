@@ -1045,6 +1045,8 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
 
           {/* Button that works perfectly in both themes */}
           <Button
+          component="a"
+  href="/contact"
             variant="contained"
             size="large"
             sx={{

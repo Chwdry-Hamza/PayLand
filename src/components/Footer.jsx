@@ -13,6 +13,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import EmailIcon from '@mui/icons-material/Email';
 import { useLocation, useNavigate } from "react-router-dom";
 function FooterCol({ title, items }) {
   return (
@@ -52,7 +53,7 @@ const navigate = useNavigate();
     {
       name: "LinkedIn",
       icon: <LinkedInIcon fontSize="small" />,
-      url: "https://www.linkedin.com/company/praxis-tech-ltd",
+      url: "https://www.linkedin.com/in/paylandgateway",
       hoverBg: "#0077B5",
     },
     {
@@ -64,13 +65,19 @@ const navigate = useNavigate();
     {
       name: "Instagram",
       icon: <InstagramIcon fontSize="small" />,
-      url: "https://instagram.com/praxistech",
+      url: "https://www.instagram.com/payland_official/",
       hoverBg: "#E4405F",
     },
     {
       name: "Facebook",
       icon: <FacebookIcon fontSize="small" />,
-      url: "https://facebook.com/praxistech",
+      url: "https://www.facebook.com/profile.php?id=61581868289945",
+      hoverBg: "#1877F2",
+    },
+    {
+      name: "Gmail",
+      icon: <EmailIcon fontSize="small" />,
+      url: "https://www.facebook.com/profile.php?id=61581868289945",
       hoverBg: "#1877F2",
     },
   ];
@@ -290,7 +297,7 @@ const handleLogoClick = (e) => {
               Privacy Policy
             </Link>
             <Link
-              href="/legal/cookies"
+              href="/Cookies"
               sx={{
                 color: "text.secondary",
                 fontSize: 14,
@@ -299,6 +306,17 @@ const handleLogoClick = (e) => {
             >
               Cookies Settings
             </Link>
+             <Link
+              href="/Information Security Policy"
+              sx={{
+                color: "text.secondary",
+                fontSize: 14,
+                "&:hover": { color: "primary.main" },
+              }}
+            >
+              Information Security Policy
+            </Link>
+            
           </Box>
         </Box>
       </Box>

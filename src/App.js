@@ -13,6 +13,8 @@ import Careers from "./pages/Careers";
 import ContactUs from "./pages/ContactUs";
 import TermsCnditions from "./pages/TremsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Cookies from "./pages/Cookies";
+import InformationSecurityPolicy from "./pages/InformationSecurityPolicy";
 
 export default function App({ mode, toggleMode }) {
   return (
@@ -27,6 +29,8 @@ export default function App({ mode, toggleMode }) {
           <Route path="/contact" element={<ContactPage mode={mode} />} />
           <Route path="/terms-and-conditions" element={<TermsCnditions mode={mode} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy mode={mode} />} />
+          <Route path="/Cookies" element={<Cookies mode ={mode}/>}/>
+          <Route path="/Information Security Policy"element={<InformationSecurityPolicy mode={mode}/>}/>
 
           {/* THREE SEPARATE PAGES */}
           <Route path="/about/who-we-are" element={<WhoWeAre mode={mode} />} />

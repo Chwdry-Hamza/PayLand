@@ -1,12 +1,16 @@
 import React from "react";
 import { Box, Container, Typography,Button, Stack, Grid } from "@mui/material";
 import  Person  from "../../src/Boss.jpg";
+import  Ali  from "../../src/Ali.jpg";
+import  Cristine  from "../../src/Cristine.jpg";
+import  Shaira  from "../../src/shaira.JPEG";
+
 import Payland from "../../src/Payland.jpg";
 import PaylandVideo from "../../src/PaylandVideo.mp4"
 const offices = [
-  { name: "CYPRUS OFFICE", location: "Limassol", flag: "CY" },
+  { name: "LONDON OFFICE", location: "Covent Garden", flag: "CY" },
   { name: "DUBAI OFFICE", location: "Dubai", flag: "AE" },
-  { name: "KOSOVO OFFICE", location: "Pristina", flag: "XK" },
+  // { name: "KOSOVO OFFICE", location: "Pristina", flag: "XK" },
 ];
 
 export default function GlobalPresence({ mode = "light" }) {
@@ -583,7 +587,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
   <Button
     variant="contained"
     size="large"
-    href="/careers"
+    href="/contact"
     target="_blank"
     rel="noopener"
     sx={{
@@ -649,6 +653,131 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
   </Box>
 
 </Box>
+<Box sx={{ textAlign: "center", maxWidth: 1300, mx: "auto", px: { xs: 2, md: 4 } }}>
+  {/* MAIN TITLE */}
+  <Typography
+    variant="h3"
+    sx={{
+      fontWeight: 900,
+      letterSpacing: "0.05em",
+      color: accent,
+      mb: 6,
+      fontSize: { xs: "2.2rem", md: "3.5rem" },
+      textTransform: "uppercase",
+      mt: "40px",
+    }}
+  >
+    Our Team
+  </Typography>
+
+  {/* 3 CARDS ROW */}
+  <Box
+    sx={{
+      display: "grid",
+      gridTemplateColumns: { xs: "1fr", sm: "repeat(3, 1fr)" },
+      gap: { xs: 3, sm: 4 },
+      mb: 8,
+    }}
+  >
+    {/* CARD 1 - IT Developer */}
+    <Box
+      sx={{
+        borderRadius: 3,
+        overflow: "hidden",
+        border: `1px solid ${borderColor || "#ddd"}`,
+        backgroundColor: isDark ? "#222" : "#fff",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+        transition: "all 0.3s ease",
+        "&:hover": {
+          transform: "translateY(-10px)",
+          boxShadow: "0 16px 32px rgba(0,0,0,0.15)",
+        },
+      }}
+    >
+      <Box sx={{ height: { xs: 250, sm: 380 }, overflow: "hidden" }}>
+        <img
+          src={Ali}
+          alt="IT Developer"
+          style={{ width: "100%", height: "120%", objectFit: "cover" }}
+        />
+      </Box>
+      <Box sx={{ p: { xs: 3, sm: 4 }, textAlign: "center" }}>
+        <Typography variant="h5" sx={{ fontWeight: 700, color: accent, mb: 1 }}>
+          IT Developer
+        </Typography>
+        <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
+          Develops payment systems, manages integrations, and oversees projects to ensure smooth and secure operations. with modern tech stack (React, Node.js, Go, AWS).
+        </Typography>
+      </Box>
+    </Box>
+
+    {/* CARD 2 - Driver */}
+    <Box
+      sx={{
+        borderRadius: 3,
+        overflow: "hidden",
+        border: `1px solid ${borderColor || "#ddd"}`,
+        backgroundColor: isDark ? "#222" : "#fff",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+        transition: "all 0.3s ease",
+        "&:hover": {
+          transform: "translateY(-10px)",
+          boxShadow: "0 16px 32px rgba(0,0,0,0.15)",
+        },
+      }}
+    >
+      <Box sx={{ height: { xs: 250, sm: 380 }, overflow: "hidden" }}>
+        <img
+          src={Shaira} // Replace with your actual image
+          alt="Sales Manager"
+          style={{ width: "100%", height: "120%", objectFit: "cover" }}
+        />
+      </Box>
+      <Box sx={{ p: { xs: 3, sm: 4 }, textAlign: "center" }}>
+        <Typography variant="h5" sx={{ fontWeight: 700, color: accent, mb: 1 }}>
+          Sales Manager
+        </Typography>
+        <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
+          Drives merchant and PSP acquisition, promotes payment solutions, and ensures smooth onboarding and client satisfaction.
+        </Typography>
+      </Box>
+    </Box>
+
+    {/* CARD 3 - Supervisor */}
+    <Box
+      sx={{
+        borderRadius: 3,
+        overflow: "hidden",
+        border: `1px solid ${borderColor || "#ddd"}`,
+        backgroundColor: isDark ? "#222" : "#fff",
+        boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
+        transition: "all 0.3s ease",
+        "&:hover": {
+          transform: "translateY(-10px)",
+          boxShadow: "0 16px 32px rgba(0,0,0,0.15)",
+        },
+      }}
+    >
+      <Box sx={{ height: { xs: 250, sm: 380 }, overflow: "hidden" }}>
+        <img
+          src={Cristine}// Replace with your actual image
+          alt="Supervisor"
+          style={{ width: "100%", height: "120%", objectFit: "cover" }}
+        />
+      </Box>
+      <Box sx={{ p: { xs: 3, sm: 4 }, textAlign: "center" }}>
+        <Typography variant="h5" sx={{ fontWeight: 700, color: accent, mb: 1 }}>
+          Supervisor
+        </Typography>
+        <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
+          Manages daily team operations, oversees merchant processes, and maintains strong partner relationships.
+        </Typography>
+      </Box>
+    </Box>
+  </Box>
+
+
+</Box>  
         </Box>
       </Container>
     </Box>
