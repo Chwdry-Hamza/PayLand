@@ -143,7 +143,11 @@ const HoverCard = ({ children, sx, mode }) => {
 export default function Home({ mode, toggleMode }) {
     const isDark = mode === "dark";
   // Theme-aware colors (same as Product page)
-  const bgColor = mode === "dark" ? "#000" : "#f8f9fa";
+const bgColor =
+  mode === "dark"
+    ? "#000"
+    : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const mutedColor = mode === "dark" ? "#ccc" : "#666";
   const cardBg = mode === "dark" ? "#1a1a1a" : "#fff";
@@ -156,7 +160,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
     <Box
       component="main"
       sx={{
-        bgcolor: bgColor,
+        background: bgColor,
         color: textColor,
         py: { xs: 4, md: 8 },
         minHeight: "100vh",
@@ -232,27 +236,29 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
                   mx: { xs: "auto", md: 0 },
                 }}
               >
-                PAYOK is a global payment aggregator helping businesses accept
+                PayLand is a global payment aggregator helping businesses accept
                 100+ local payment methods and process payouts instantly,
                 securely, efficiently, and at scale.
               </Typography>
 
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  mt: 4,
-                  px: { xs: 3, md: 4 },
-                  py: { xs: 1, md: 1.5 },
-                  borderRadius: 50,
-                  fontWeight: 600,
-                  backgroundColor: "#1a1a1a",
-                  color: "#fff",
-                  "&:hover": { backgroundColor: "#000" },
-                }}
-              >
-                Enquire Now
-              </Button>
+       <Button
+  component={Link}
+  to="/contact"  // your target route
+  variant="contained"
+  size="large"
+  sx={{
+    mt: 4,
+    px: { xs: 3, md: 4 },
+    py: { xs: 1, md: 1.5 },
+    borderRadius: 50,
+    fontWeight: 600,
+    backgroundColor: "#1a1a1a",
+    color: "#fff",
+    "&:hover": { backgroundColor: "#000" },
+  }}
+>
+  Contact Now
+</Button>
             </Box>
 
             {/* STAT CARDS */}
@@ -1066,7 +1072,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
               transition: "all 0.3s ease",
             }}
           >
-            Contact Us Now
+            Contact Us
           </Button>
         </Box>
       </Grid>

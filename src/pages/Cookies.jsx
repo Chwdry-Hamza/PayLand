@@ -2,13 +2,13 @@ import React from "react";
 import { Box, Container, Typography, Grid } from "@mui/material";
 
 export default function Cookies({ mode }) {
-  const bgColor = mode === "dark" ? "#0d0d0d" : "#f9f9f9";
+const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
   const textColor = mode === "dark" ? "#e0e0e0" : "#212121";
   const headingColor = mode === "dark" ? "#ffffff" : "#000000";
   const mutedColor = mode === "dark" ? "#bbbbbb" : "gray";
 
   return (
-    <Box sx={{ py: 6, backgroundColor: bgColor, transition: "0.3s ease" }}>
+    <Box sx={{ py: 6, background: bgColor, transition: "0.3s ease" }}>
       <Container maxWidth="lg">
         <Grid container spacing={3} justifyContent="left">
           <Grid item xs={12}>
@@ -35,7 +35,7 @@ export default function Cookies({ mode }) {
                 mt: 1,
               }}
             >
-              Please read this document to familiarize yourself with how Praxis Tech uses cookies
+              Please read this document to familiarize yourself with how PayLand Tech uses cookies
             </Typography>
 
             <Box sx={{ maxWidth: "100%", mx: "auto", py: 4 }}>
@@ -512,7 +512,7 @@ export default function Cookies({ mode }) {
                   >
                Hopefully the above information has clarified things for you. As it was previously mentioned, if you are not sure whether you want 
                to allow the cookies or not, it is usually safer to leave cookies enabled in case it interacts with one of the features you use on 
-               our site. However, if you are still looking for more information, then feel free to contact us via email at legal@praxis.tech.
+               our site. However, if you are still looking for more information, then feel free to contact us via email at support@PayLand.info.
                   </Typography>
                 </Box>
               </Box>

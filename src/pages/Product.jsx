@@ -10,7 +10,9 @@ export default function Product({ mode, toggleMode }) {
   const { slug } = useParams(); // "Card-Payment-Gateway" | "IBAN-Solutions" | "Crypto-to-Card-Servise"
 
   // Theme-aware colors (same logic as navbar)
-  const bgColor = mode === "dark" ? "#000" : "#f8f9fa";
+const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+
+  
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const mutedColor = mode === "dark" ? "#ccc" : "#424242";
   const accentColor = "#ff5722"; // PayLand orange
@@ -56,16 +58,17 @@ export default function Product({ mode, toggleMode }) {
   }
 
   return (
-    <Box
-      component="main"
-      sx={{
-        minHeight: "50vh",
-        maxHeight:"80vh",
-        bgcolor: bgColor,
-        color: textColor,
-        py: { xs: 4, md: 8 },
-      }}
-    >
+ <Box
+  component="main"
+  sx={{
+    minHeight: "50vh",
+    maxHeight: "80vh",
+    background: bgColor, // <-- use background, not bgcolor
+    color: textColor,
+    py: { xs: 4, md: 8 },
+  }}
+>
+
       <Container maxWidth="lg">
         <Box
           component="section"

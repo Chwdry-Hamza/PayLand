@@ -1,14 +1,14 @@
 import React from "react";
-import { Box, Container, Typography, Grid } from "@mui/material";
+import { Box, Container,Link, Typography, Grid } from "@mui/material";
 
 export default function PrivacyPolicy({ mode }) {
-  const bgColor = mode === "dark" ? "#0d0d0d" : "#f9f9f9";
+const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
   const textColor = mode === "dark" ? "#e0e0e0" : "#212121";
   const headingColor = mode === "dark" ? "#ffffff" : "#000000";
   const mutedColor = mode === "dark" ? "#bbbbbb" : "gray";
 
   return (
-    <Box sx={{ py: 6, backgroundColor: bgColor, transition: "0.3s ease" }}>
+    <Box sx={{ py: 6, background: bgColor, transition: "0.3s ease" }}>
       <Container maxWidth="lg">
         <Grid container spacing={3} justifyContent="left">
           <Grid item xs={12}>
@@ -35,7 +35,7 @@ export default function PrivacyPolicy({ mode }) {
                 mt: 1,
               }}
             >
-            Please read this privacy statement if you would like to know more about the way Praxis Tech collects and further process your personal data.
+            Please read this privacy statement if you would like to know more about the way PayLand Tech collects and further process your personal data.
             </Typography>
 
             <Box sx={{ maxWidth: "100%", mx: "auto", py: 4 }}>
@@ -74,18 +74,27 @@ export default function PrivacyPolicy({ mode }) {
                       lineHeight: 1.7,
                     }}
                   >
-                   This privacy notice sets out how Praxis Tech Ltd a company incorporated and existing under the laws of the Republic
-                    of Cyprus with registration number HE 410576 (“Praxis” or “we” or “us” or “our” or “Company”) processes data, whether 
+                   This privacy notice sets out how PayLand Tech Ltd a company incorporated and existing under the laws of the Republic
+                    of Cyprus with registration number HE 410576 (“PayLand” or “we” or “us” or “our” or “Company”) processes data, whether 
                     on individuals (including personal data in respect of individuals who are clients, intermediaries or other third parties 
                     that the Company interacts with, or any individual who is connected to those parties) or otherwise. Where the data held 
                     are on individuals, this document also sets out the rights of those individuals in respect of that personal data.<br/><br/>
 
 “You” in this Privacy Policy may refer to a visitor of our website (the “Visitor”), who intends to use or already uses, directly or
  indirectly, our products or services including inter alia any shareholders, beneficial owners, principals, directors, staff members,
-  merchants and customers of merchants accessing our website available at www.praxis.tech (the “Website”).<br/><br/>
+  merchants and customers of merchants accessing our website available at {" "}
+  <Link
+    href="https://www.payland.info/"
+    target="_blank"
+    rel="noopener noreferrer"
+    underline="hover"
+    sx={{ color: "#1a1a1a", fontWeight: 600 }}
+  >
+    https://www.payland.info/
+  </Link>{" "} (the “Website”).<br/><br/>
 
 This privacy notice has been prepared in accordance with the provisions of the EU General Data Protection Regulation (“GDPR”). Any questions
- relating to this Privacy Notice or requests in respect of personal data should be directed to our Data Protection Officer (DPO) at dpo@praxis.tech .
+ relating to this Privacy Notice or requests in respect of personal data should be directed to our Data Protection Officer (DPO) at dpo@PayLand.
                   </Typography>
                 </Box>
               </Box>
@@ -375,7 +384,7 @@ This privacy notice has been prepared in accordance with the provisions of the E
                     }}
                   >
                     Where we need to comply with our legal obligations under laws and regulations or under the terms of a contract and
-                     you fail to provide any requested personal data, Praxis may not be able to accept you as a customer or continue our
+                     you fail to provide any requested personal data, PayLand may not be able to accept you as a customer or continue our
                       business relationship and will inform you in this regard.
                   </Typography>
                 </Box>
@@ -670,7 +679,7 @@ This privacy notice has been prepared in accordance with the provisions of the E
                   }}
                 >
                 We use Your personal data in order to provide our services/products to You, in the capacity of a Merchant, and to respectively 
-                conclude contracts and carry out our contractual obligations. In this regard, we rely on a contract entered into by You and Praxis
+                conclude contracts and carry out our contractual obligations. In this regard, we rely on a contract entered into by You and PayLand
                  as the valid ground for the processing of Your personal data.
                 </Typography>
                 </Box>
@@ -1185,7 +1194,7 @@ This privacy notice has been prepared in accordance with the provisions of the E
                   }}
                 >
                 You are also able at any time to withdraw any consent to receive marketing communications that you have given to us. You can do 
-                this by contacting us at hello@praxis.tech or by writing to us at:
+                this by contacting us at hello@PayLand or by writing to us at:
                 </Typography>
                  <Typography
                   variant="h4"
@@ -1668,10 +1677,10 @@ protection laws; as well as to object to any direct marketing from us. Where app
                   considers necessary in order to maintain the confidentiality and security of your personal information, with due regard to 
                   the applicable obligations and exceptions under the legislation in force.<br/><br/>
 
-Praxis regularly reviews its policies regarding the collection, storage and processing of your personal information, 
+PayLand regularly reviews its policies regarding the collection, storage and processing of your personal information, 
 including physical security measures, to prevent alteration, loss, query, use or fraudulent or unauthorized access of your personal information.<br/><br/>
 
-Praxis has put in place procedures to deal with personal information breach and will notify you and any applicable regulator or 
+PayLand has put in place procedures to deal with personal information breach and will notify you and any applicable regulator or 
 authority of a breach where we are legally required to do so.
                   </Typography>
                 </Box>
@@ -1789,8 +1798,8 @@ authority of a breach where we are legally required to do so.
                       lineHeight: 1.7,
                     }}
                   >
-                   Questions, comments and requests regarding this Privacy Policy should be addressed to dpo@praxis.tech . Alternatively,
-                    you can write to us at: PRAXIS TECH LTD, 39 Kolonakiou Avenue, Frema Plaza, 2nd Floor, Office 201 Ayios Athanasios, 4103 Limassol, Cyprus.
+                   Questions, comments and requests regarding this Privacy Policy should be addressed to dpo@PayLand . Alternatively,
+                    you can write to us at: PayLand LTD, 39 Kolonakiou Avenue, Frema Plaza, 2nd Floor, Office 201 Ayios Athanasios, 4103 Limassol, Cyprus.
                   </Typography>
                 </Box>
               </Box>

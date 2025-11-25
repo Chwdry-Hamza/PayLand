@@ -22,7 +22,7 @@ export default function Industry({ mode, toggleMode }) {
   const { slug } = useParams(); // "trading" | "igaming" | "ecommerce"
 
   // ---------- THEME ----------
-  const bgColor = mode === "dark" ? "#000" : "#f8f9fa";
+  const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const mutedColor = mode === "dark" ? "#ccc" : "#424242";
   const accentColor = "#ff5722"; // PayLand orange
@@ -75,7 +75,7 @@ export default function Industry({ mode, toggleMode }) {
       sx={{
         minHeight: "50vh",
         maxHeight: "80vh",
-        bgcolor: bgColor,
+        background: bgColor,
         color: textColor,
         py: { xs: 4, md: 8 },
       }}

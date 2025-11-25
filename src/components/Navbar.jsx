@@ -136,7 +136,11 @@ export default function PayLandNavbar({ mode, toggleMode }) {
   };
 
   // ---------- Colors ----------
-  const bgColor = mode === "dark" ? "#000" : "#f8f9fa";
+  const bgColor = mode === "dark" 
+  ? "#000" 
+  : {
+      background: "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)",
+    };
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const linkColor = mode === "dark" ? "#e0e0e0" : "#424242";
   const borderColor = mode === "dark" ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)";

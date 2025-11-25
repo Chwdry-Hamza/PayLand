@@ -77,7 +77,7 @@ const navigate = useNavigate();
     {
       name: "Gmail",
       icon: <EmailIcon fontSize="small" />,
-      url: "https://www.facebook.com/profile.php?id=61581868289945",
+      url: "https://www.gmail.com",
       hoverBg: "#1877F2",
     },
   ];
@@ -89,11 +89,13 @@ const handleLogoClick = (e) => {
     navigate("/home"); // Navigate normally
   }
 };
+  const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
   return (
+    
     <Box
       component="footer"
       sx={{
-        bgcolor: "background.paper",
+        background: bgColor,
         color: "text.primary",
         py: { xs: 6, md: 8 },
         borderTop: `1px solid ${theme.palette.divider}`,
@@ -272,7 +274,7 @@ const handleLogoClick = (e) => {
           textAlign={{ xs: "center", sm: "left" }}
         >
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            © 2016–{new Date().getFullYear()} Praxis Tech Ltd. All rights reserved.
+            © 2016–{new Date().getFullYear()} PayLand Tech Ltd. All rights reserved.
           </Typography>
 
           <Box display="flex" gap={3} flexWrap="wrap" justifyContent="center">
@@ -323,3 +325,5 @@ const handleLogoClick = (e) => {
     </Box>
   );
 }
+
+

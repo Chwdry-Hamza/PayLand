@@ -15,14 +15,14 @@ const offices = [
 
 export default function GlobalPresence({ mode = "light" }) {
   const isDark = mode === "dark";
-  const bg = isDark ? "#0a0a0a" : "#ffffff";
+  const bg = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
   const text = isDark ? "#ffffff" : "#000000";
   const accent = "#ff5722"; // PayLand Orange
   const boxBg = isDark ? "#111111" : "#f8f8f8";
   const borderColor = accent;
 const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
   return (
-    <Box sx={{ bgcolor: bg, color: text, py: { xs: 6, md: 10 } }}>
+    <Box sx={{ background: bg, color: text, py: { xs: 6, md: 10 } }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: "center", maxWidth: 1300, mx: "auto" }}>
 
@@ -40,7 +40,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
           >
             Our Global Presence
           </Typography>
-
+          
           {/* SUBTEXT */}
           <Typography
             variant="body1"
@@ -53,7 +53,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
               color: isDark ? "#aaa" : "#444",
             }}
           >
-            Founded in 2014 as a startup and completely bootstrapped, Praxis has evolved into
+            Founded in 2014 as a startup and completely bootstrapped, PayLand has evolved into
             an international fintech company with a diverse global team.
           </Typography>
 
@@ -166,7 +166,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
             ))}
           </Stack>
 
-           <Box
+           {/* <Box
                 component="form"
                 sx={{
                   maxWidth: { xs: 600, sm: 800, md: 1200 },
@@ -182,7 +182,6 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
                 }}
               >
       <Grid container spacing={3} alignItems="flex-start">
-        {/* LEFT: IMAGE */}
         <Grid item xs={12} md={5}>
           <Box
             component="img"
@@ -198,7 +197,6 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
           />
         </Grid>
 
-        {/* RIGHT: TEXT — LEFT ALIGNED */}
         <Grid item xs={12} md={7}>
           <Typography
             variant="h4"
@@ -240,6 +238,92 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
           
         </Grid>
       </Grid>
+</Box> */}
+
+
+<Box
+  component="form"
+  sx={{
+    maxWidth: { xs: 600, sm: 800, md: 1200 },
+    mx: "auto",
+    p: { xs: 3, sm: 5 },
+    borderRadius: 3,
+    bgcolor: formBgColor,
+    boxShadow: isDark
+      ? "0 10px 30px rgba(0,0,0,0.4)"
+      : "0 10px 30px rgba(0,0,0,0.1)",
+    border: `1px solid ${borderColor}`,
+    mt: "30px",
+  }}
+>
+  <Grid container spacing={4} alignItems="center">
+    <Grid item xs={12} md={6}>
+      <Box
+        component="img"
+        src={Person}
+        alt="Ozgur Ozcakmak"
+        sx={{
+          width: "100%",
+          height: "auto",
+          maxHeight: { xs: 400, md: 550 },   // tall enough but not huge
+          objectFit: "cover",
+          borderRadius: 3,
+          boxShadow: 3,
+        }}
+      />
+    </Grid>
+
+    <Grid item xs={12} md={6}>
+      <Typography
+        variant="h4"
+        component="h2"
+        gutterBottom
+        sx={{
+          fontWeight: "bold",
+          fontSize: { xs: "2rem", md: "2.5rem" },
+          textAlign: { xs: "center", md: "left" },
+        }}
+      >
+        OUR JOURNEY
+      </Typography>
+
+      <Typography
+        variant="body1"
+        color="text.secondary"
+        paragraph
+        sx={{
+          textAlign: { xs: "center", md: "left" },
+          fontSize: { xs: "1rem", md: "1.1rem" },
+          lineHeight: 1.8,
+        }}
+      >
+        Before we became payment software providers, we were merchants<br/> ourselves.
+        
+        With extensive experience in Forex trading and iGaming, <br/>we saw the gap in
+        the market and built the software we wanted to use<br/> ourselves.
+      </Typography>
+
+      <Box sx={{ mt: 3, textAlign: { xs: "center", md: "left" } }}>
+        <Typography
+          variant="h6"
+          sx={{
+            fontSize: "24px",
+            fontWeight: "bold",
+            color: "text.primary",
+          }}
+        >
+          Ozgur Ozcakmak
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          color="text.secondary"
+          sx={{ fontWeight: "bold" }}
+        >
+          Co-Founder and Director
+        </Typography>
+      </Box>
+    </Grid>
+  </Grid>
 </Box>
         <Box sx={{ textAlign: "center", maxWidth: 1300, mx: "auto" }}>
   {/* MAIN TITLE */}
@@ -705,6 +789,9 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
         <Typography variant="h5" sx={{ fontWeight: 700, color: accent, mb: 1 }}>
           IT Developer
         </Typography>
+          <Typography variant="h5" sx={{ fontWeight: 700, color: isDark ? "#ccc" : "black", mb: 1 }}>
+        Ali Hamza
+        </Typography>
         <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
           Develops payment systems, manages integrations, and oversees projects to ensure smooth and secure operations. with modern tech stack (React, Node.js, Go, AWS).
         </Typography>
@@ -737,6 +824,9 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
         <Typography variant="h5" sx={{ fontWeight: 700, color: accent, mb: 1 }}>
           Sales Manager
         </Typography>
+        <Typography variant="h5" sx={{ fontWeight: 700, color: isDark ? "#ccc" : "black", mb: 1 }}>
+        Shaira Terraza
+        </Typography>
         <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
           Drives merchant and PSP acquisition, promotes payment solutions, and ensures smooth onboarding and client satisfaction.
         </Typography>
@@ -768,6 +858,9 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
       <Box sx={{ p: { xs: 3, sm: 4 }, textAlign: "center" }}>
         <Typography variant="h5" sx={{ fontWeight: 700, color: accent, mb: 1 }}>
           Supervisor
+        </Typography>
+        <Typography variant="h5" sx={{ fontWeight: 700, color: isDark ? "#ccc" : "black", mb: 1 }}>
+        Cristine Manuawaan
         </Typography>
         <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
           Manages daily team operations, oversees merchant processes, and maintains strong partner relationships.

@@ -1,14 +1,14 @@
 import React from "react";
-import { Box, Container, Typography, Grid } from "@mui/material";
+import { Box, Container,Link, Typography, Grid } from "@mui/material";
 
 export default function TermsCnditions({ mode }) {
-  const bgColor = mode === "dark" ? "#0d0d0d" : "#f9f9f9";
+const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
   const textColor = mode === "dark" ? "#e0e0e0" : "#212121";
   const headingColor = mode === "dark" ? "#ffffff" : "#000000";
   const mutedColor = mode === "dark" ? "#bbbbbb" : "gray";
 
   return (
-    <Box sx={{ py: 6, backgroundColor: bgColor, transition: "0.3s ease" }}>
+    <Box sx={{ py: 6, background: bgColor, transition: "0.3s ease" }}>
       <Container maxWidth="lg">
         <Grid container spacing={3} justifyContent="left">
           <Grid item xs={12}>
@@ -74,11 +74,21 @@ export default function TermsCnditions({ mode }) {
                       lineHeight: 1.7,
                     }}
                   >
-                    By accessing http://praxis.tech (the “Website”) you confirm that you agree and are bound by the terms and conditions
-                    outlined below (the “T&Cs”). The Website is operated by Praxis Tech Ltd., a company incorporated and existing under
-                    the laws of the Republic of Cyprus with registration number HE 410576 (“Praxis”). These T&Cs apply to the entire Website
-                    and any email and/or other type of communication between you and Praxis. Any person who does not want to accept these T&Cs
-                    should not be using the Website.
+                    By accessing{" "}
+  <Link
+    href="https://www.payland.info/"
+    target="_blank"
+    rel="noopener noreferrer"
+    underline="hover"
+    sx={{ color: "#1a1a1a", fontWeight: 600 }}
+  >
+    https://www.payland.info/
+  </Link>{" "}
+  (the “Website”) you confirm that you agree and are bound by the terms and conditions
+  outlined below (the “T&Cs”). The Website is operated by PatLand Ltd., a company incorporated and existing under
+  the laws of the Republic of Cyprus with registration number HE 410576 (PayLand). These T&Cs apply to the entire Website
+  and any email and/or other type of communication between you and PayLand. Any person who does not want to accept these T&Cs
+  should not be using the Website.
                   </Typography>
                 </Box>
               </Box>
@@ -117,9 +127,9 @@ export default function TermsCnditions({ mode }) {
                       lineHeight: 1.7,
                     }}
                   >
-                    To ensure that the Website remains available to all users, Praxis may monitor network traffic to identify unauthorized attempts 
+                    To ensure that the Website remains available to all users, PayLand may monitor network traffic to identify unauthorized attempts 
                     to upload and/or change information and/or otherwise cause damage to the Website and/or for any other reason as deemed necessary 
-                    by Praxis. Anyone using the Website expressly consents to such monitoring.<br/><br/> Unauthorized attempts to modify, alter, deface,
+                    by PayLand. Anyone using the Website expressly consents to such monitoring.<br/><br/> Unauthorized attempts to modify, alter, deface,
                      destroy, or corrupt any information stored on this Website or its system to defeat and/or circumvent any security features, to probe,
                       scan and/or test vulnerabilities, breach security and/or authentication measures, forge TCP/IP headers, install or attempt to install 
                       unauthorized software, utilize the Website other than its intended purposes are expressly prohibited and may result in criminal conviction.
@@ -162,13 +172,13 @@ export default function TermsCnditions({ mode }) {
                       lineHeight: 1.7,
                     }}
                   >
-          Every effort is made to provide useful, accurate and complete information to this Website. However, Praxis cannot guarantee that
-          there are or there will not be any errors. Praxis makes no claims, promises, guarantees and/or anything of similar nature to the
+          Every effort is made to provide useful, accurate and complete information to this Website. However, PayLand cannot guarantee that
+          there are or there will not be any errors. PayLand makes no claims, promises, guarantees and/or anything of similar nature to the
            aforesaid relating to the accuracy, completeness, usefulness and/or adequacy of the contents of the Website and expressly disclaims 
-           liability for any errors and/or omissions in its content.<br/><br/> Neither Praxis nor its employees, contractors, associates make any 
+           liability for any errors and/or omissions in its content.<br/><br/> Neither PayLand nor its employees, contractors, associates make any 
            warranty, expressed, implies or statutory including but not limited to any warranty that third party rights or titles have not been infringed
             or merchantability or fitness for any particular purpose.<br/><br/> No warranty of any sort is made with respect to the content of third party 
-            websites that have links for this Website and all liability of every sort is expressly disclaimed.<br/><br/> Praxis is not and cannot be held 
+            websites that have links for this Website and all liability of every sort is expressly disclaimed.<br/><br/> PayLand is not and cannot be held 
             liable in any circumstance for special, indirect or consequential damages or any damages whatsoever resulting from loss of use, data, revenue
              of profits whether in an action of contract, negligence or otherwise arising in connection with any use of the information and/or services 
              available on the Website.    
@@ -211,7 +221,7 @@ export default function TermsCnditions({ mode }) {
                     }}
                   >
                     This Website and documents posted in it, may contain hypertext links or points to information created and maintained
-                     by other public and/or private organizations. Praxis does not guarantee the accuracy, relevance, usefulness, timeliness
+                     by other public and/or private organizations. PayLand does not guarantee the accuracy, relevance, usefulness, timeliness
                       or completeness of any linked information.<br/><br/>
 
 The inclusion of links or pointers to other websites is not intended to (a) assign importance to those websites and the information contained
@@ -219,7 +229,7 @@ The inclusion of links or pointers to other websites is not intended to (a) assi
   organizations sponsoring such websites by trade name, trademark, manufacture or anything of similar nature.<br/><br/>
 
 Reference in this Website to any specific commercial products, processes or services or use of any trade, firm or corporation name is for the
- information and convenience of the Website’s visitors and does not constitute endorsement, recommendation or favouring by Praxis, unless expressly
+ information and convenience of the Website’s visitors and does not constitute endorsement, recommendation or favouring by PayLand, unless expressly
   provided otherwise.
                   </Typography>
                 </Box>
@@ -260,7 +270,7 @@ Reference in this Website to any specific commercial products, processes or serv
                     }}
                   >
                   All contents of this Website and any documents included in it, provided to visitors or users or clients, constitute a property
-                   of Praxis Tech, unless expressly provided otherwise. No user and/or visitor and/or client may copy, modify, publish, transfer,
+                   of PayLand, unless expressly provided otherwise. No user and/or visitor and/or client may copy, modify, publish, transfer,
                     sell, reproduce, create derivative works and/or in any way exploit any of the content, wholly or partially of this Website, unless
                      the express written consent of Praxis is given.
                   </Typography>
@@ -301,8 +311,8 @@ Reference in this Website to any specific commercial products, processes or serv
                       lineHeight: 1.7,
                     }}
                   >
-                    Praxis may provide from time to time certain free services such as weekly newsletters, white papers and/or anything similar.
-                     No user of the Website becomes client of Praxis by receiving any of the aforesaid free services. Praxis is not and cannot be 
+                    PayLand may provide from time to time certain free services such as weekly newsletters, white papers and/or anything similar.
+                     No user of the Website becomes client of PayLand by receiving any of the aforesaid free services. PayLand is not and cannot be 
                      held liable in any way using such free service from anyone.
                   </Typography>
                 </Box>
@@ -383,7 +393,7 @@ Reference in this Website to any specific commercial products, processes or serv
                       lineHeight: 1.7,
                     }}
                   >
-               Any delay or non-exercise by Praxis of any right, power and/or provision of these T&Cs shall not operate and/or be interpreted
+               Any delay or non-exercise by PayLand of any right, power and/or provision of these T&Cs shall not operate and/or be interpreted
                 as a waiver of any right and/or any other related right.
                   </Typography>
                 </Box>

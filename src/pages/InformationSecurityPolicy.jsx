@@ -2,13 +2,13 @@ import React from "react";
 import { Box, Container, Typography, Grid } from "@mui/material";
 
 export default function InformationSecurityPolicy({ mode }) {
-  const bgColor = mode === "dark" ? "#0d0d0d" : "#f9f9f9";
+const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
   const textColor = mode === "dark" ? "#e0e0e0" : "#212121";
   const headingColor = mode === "dark" ? "#ffffff" : "#000000";
   const mutedColor = mode === "dark" ? "#bbbbbb" : "gray";
 
   return (
-    <Box sx={{ py: 6, backgroundColor: bgColor, transition: "0.3s ease" }}>
+    <Box sx={{ py: 6, background: bgColor, transition: "0.3s ease" }}>
       <Container maxWidth="lg">
         <Grid container spacing={3} justifyContent="left">
           <Grid item xs={12}>
@@ -35,7 +35,7 @@ export default function InformationSecurityPolicy({ mode }) {
                 mt: 1,
               }}
             >
-              Please review this document to understand how Praxis Tech operates and its commitment to information security.
+              Please review this document to understand how PayLand  operates and its commitment to information security.
             </Typography>
 
             <Box sx={{ maxWidth: "100%", mx: "auto", py: 4 }}>
@@ -74,7 +74,7 @@ export default function InformationSecurityPolicy({ mode }) {
                       lineHeight: 1.7,
                     }}
                   >
-                   Praxis Tech Ltd. is dedicated to safeguarding the confidentiality, integrity, and availability of information. 
+                   PayLand is dedicated to safeguarding the confidentiality, integrity, and availability of information. 
                    We achieve this by implementing and continuously enhancing a robust Information Security Management System (ISMS) 
                    in alignment with the ISO 27001 standard and our strategic business goals.
                   </Typography>
@@ -599,7 +599,7 @@ export default function InformationSecurityPolicy({ mode }) {
                       lineHeight: 1.7,
                     }}
                   >
-                   All employees, clients, suppliers, and other interested parties of Praxis Tech Ltd. are required to adhere to this policy 
+                   All employees, clients, suppliers, and other interested parties of PayLand. are required to adhere to this policy 
                    which is communicated to them by posting it to our website. It is reviewed annually by the Information Security Committee 
                    & Management Board to ensure its continued applicability and suitability.
                   </Typography>
@@ -622,8 +622,8 @@ export default function InformationSecurityPolicy({ mode }) {
                       lineHeight: 1.7,
                     }}
                   >
-                   Questions, comments and requests regarding this Information Security Policy should be addressed to infosec@praxis.tech. Alternatively, 
-                   you can write to us at: PRAXIS TECH LTD, 39 Kolonakiou Avenue, Frema Plaza, 2nd Floor, Office 201 Ayios Athanasios, 4103 Limassol, Cyprus.
+                   Questions, comments and requests regarding this Information Security Policy should be addressed to support@PayLand.info. Alternatively, 
+                   you can write to us at: PayLand TECH LTD, 39 Kolonakiou Avenue, Frema Plaza, 2nd Floor, Office 201 Ayios Athanasios, 4103 Limassol, Cyprus.
                   </Typography>
               </Box>
                 </Box>
