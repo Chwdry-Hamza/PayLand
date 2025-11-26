@@ -532,6 +532,20 @@ export default function ContactPage({ mode }) {
                 </Button>
               </Box>
             </Stack>
+            <div className="mt-16 text-center text-gray-400">
+  <p className="text-lg">Or email us directly at:</p>
+
+  <a
+    href="mailto:support@payland.info"
+    className="text-primary font-bold text-2xl mt-2 inline-block"
+  >
+    support@payland.info
+  </a>
+
+  <div className="w-32 h-[2px] bg-primary mx-auto mt-2"></div>
+</div>
+
+
           </Box>
         </Box>
       </Container>
