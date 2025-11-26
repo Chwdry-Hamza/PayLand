@@ -142,7 +142,7 @@ const handleLogoClick = (e) => {
                   letterSpacing: "-0.5px",
                 }}
               >
-                <span>Pay</span>
+                <span style={{color: mode === "dark" ? "#fff" : "black",}}>Pay</span>
                 <span style={{ color: "#ff5722" }}>Land</span>
               </Typography>
               </Box>

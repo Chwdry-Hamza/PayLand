@@ -41,7 +41,7 @@ export default function App({ mode, toggleMode }) {
         </Routes>
       </div>
 
-      <Footer />
+      <Footer mode={mode} toggleMode={toggleMode}/>
     </div>
   );
 }
