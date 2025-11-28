@@ -15,7 +15,7 @@ const offices = [
 
 export default function GlobalPresence({ mode = "light" }) {
   const isDark = mode === "dark";
-  const bg = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+  const bg = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffecd7ff, #f0c392ff)";
   const text = isDark ? "#ffffff" : "#000000";
   const accent = "#ff5722"; // PayLand Orange
   const boxBg = isDark ? "#111111" : "#f8f8f8";

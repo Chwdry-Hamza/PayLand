@@ -8,13 +8,12 @@ import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
-import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import PublicIcon from '@mui/icons-material/Public';
 import LockIcon from "@mui/icons-material/Lock";
 import BoltIcon from "@mui/icons-material/Bolt";
 import CategoryIcon from "@mui/icons-material/Category";  
-import { useParams, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import {
   LineChart,
@@ -37,7 +36,6 @@ const countries = [
   { name: "Bangladesh", flag: "🇧🇩", top: "75%", left: "60%" },
   { name: "Colombia", flag: "🇨🇴", top: "30%", left: "55%" },
 ];
-/* ──────────────────────  DATA  ────────────────────── */
 const chartData = [
   { name: "1", value: 400 },
   { name: "2", value: 300 },
@@ -72,38 +70,6 @@ const chartData = [
       color: "linear-gradient(135deg, #7b1fa2, #9c27b0)",
     },
   ];
-const products = [
-  {
-    id: 1,
-    title: "Praxis Cashier",
-    subtitle: "Hosted checkout for faster conversions",
-    img: "https://via.placeholder.com/600x360?text=Cashier",
-    tags: ["Payments", "Hosted"],
-  },
-  {
-    id: 2,
-    title: "Praxis Direct",
-    subtitle: "Direct integrations with PSPs and banks",
-    img: "https://via.placeholder.com/600x360?text=Direct",
-    tags: ["Integration", "API"],
-  },
-  {
-    id: 3,
-    title: "Hosted Payment Fields",
-    subtitle: "PCI-safe card fields for your site",
-    img: "https://via.placeholder.com/600x360?text=HPF",
-    tags: ["PCI", "Security"],
-  },
-  {
-    id: 4,
-    title: "Praxis Safe",
-    subtitle: "Tokenization & vaulting for cards",
-    img: "https://via.placeholder.com/600x360?text=Safe",
-    tags: ["Tokenization", "Vault"],
-  },
-];
-
-/* ──────────────────────  HOVERCARD  ────────────────────── */
 const HoverCard = ({ children, sx, mode }) => {
   const bgGradient = mode === "dark"
     ? "linear-gradient(180deg, #1a1a1a, #111)"
@@ -139,23 +105,15 @@ const HoverCard = ({ children, sx, mode }) => {
   );
 };
 
-/* ──────────────────────  MAIN COMPONENT  ────────────────────── */
 export default function Home({ mode, toggleMode }) {
-    const isDark = mode === "dark";
-  // Theme-aware colors (same as Product page)
 const bgColor =
   mode === "dark"
     ? "#000"
-    : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+    : "linear-gradient(90deg, #f0c392ff, #ffecd7ff, #f0c392ff)";
 
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const mutedColor = mode === "dark" ? "#ccc" : "#666";
-  const cardBg = mode === "dark" ? "#1a1a1a" : "#fff";
-  const borderColor = mode === "dark" ? "#333" : "#eee";
-const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
-  const accentHover  = "#e64a19";
-    const accent       = "#ff5722";
-
+const strokeColor = mode === "dark" ? "white" : "black";
   return (
     <Box
       component="main"
@@ -219,7 +177,10 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
               >
                 Seamless
                 <br />
-                <Box component="span" sx={{ color: "#0288d1" }}>
+                <Box component="span" sx={{ color:
+              mode === "dark"
+                ? "white"
+                : "black", }}>
                   Payments
                 </Box>
                 <br />
@@ -285,7 +246,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
                         <Line
                           type="monotone"
                           dataKey="value"
-                          stroke="#0288d1"
+                          stroke={strokeColor}
                           strokeWidth={3}
                           dot={false}
                         />
@@ -575,9 +536,13 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
           <span style={{ fontSize: "1.3rem", marginRight: "6px" }}>
             {country.flag}
           </span>
-          <Typography variant="body2" sx={{ color: "black", fontWeight: 600 }}>
+          <Typography variant="body2" sx={{ color:
+              mode === "dark"
+                ? "white"
+                : "black", fontWeight: 600 }}>
             {country.name}
           </Typography>
+        
         </Box>
       </motion.div>
     ))}
@@ -630,7 +595,10 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
           <span style={{ fontSize: "1.3rem", marginRight: "6px" }}>
             {country.flag}
           </span>
-          <Typography variant="body2" sx={{ color: "black", fontWeight: 600 }}>
+          <Typography variant="body2" sx={{ color:
+              mode === "dark"
+                ? "white"
+                : "black", fontWeight: 600 }}>
             {country.name}
           </Typography>
         </Box>

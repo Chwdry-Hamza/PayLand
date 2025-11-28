@@ -16,22 +16,18 @@ import {
   Radio,
   Checkbox,
   FormGroup,
-  useTheme,
 } from "@mui/material";
 
 export default function ContactPage({ mode }) {
-  const theme = useTheme();                 // <-- get MUI theme (light/dark)
   const isDark = mode === "dark";
 
-  // ---------- Colours ----------
-  const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+  const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffecd7ff, #f0c392ff)";
   const textColor    = isDark ? "#e0e0e0" : "#212121";
   const secondary    = isDark ? "#bbb" : "#555";
   const borderColor  = isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.12)";
   const accent       = "#ff5722";
   const accentHover  = "#e64a19";
 
-  // ---------- Form state ----------
   const [formData, setFormData] = useState({
     firstName: "", lastName: "", email: "", country: "", phone: "",
     jobTitle: "", website: "", businessType: "", companySize: "",

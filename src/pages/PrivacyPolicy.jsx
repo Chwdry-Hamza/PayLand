@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container,Link, Typography, Grid } from "@mui/material";
 
 export default function PrivacyPolicy({ mode }) {
-const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffecd7ff, #f0c392ff)";
   const textColor = mode === "dark" ? "#e0e0e0" : "#212121";
   const headingColor = mode === "dark" ? "#ffffff" : "#000000";
   const mutedColor = mode === "dark" ? "#bbbbbb" : "gray";
@@ -88,7 +88,10 @@ const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #f
     target="_blank"
     rel="noopener noreferrer"
     underline="hover"
-    sx={{ color: "#1a1a1a", fontWeight: 600 }}
+    sx={{ color:
+              mode === "dark"
+                ? "white"
+                : "black", fontWeight: 600 }}
   >
     https://www.payland.info/
   </Link>{" "} (the “Website”).<br/><br/>

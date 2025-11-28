@@ -139,7 +139,7 @@ export default function PayLandNavbar({ mode, toggleMode }) {
   const bgColor = mode === "dark" 
   ? "#000" 
   : {
-      background: "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)",
+      background: "linear-gradient(90deg, #f0c392ff, #ffecd7ff, #f0c392ff)",
     };
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const linkColor = mode === "dark" ? "#e0e0e0" : "#424242";

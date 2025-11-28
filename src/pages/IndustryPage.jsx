@@ -22,7 +22,7 @@ export default function Industry({ mode, toggleMode }) {
   const { slug } = useParams(); // "trading" | "igaming" | "ecommerce"
 
   // ---------- THEME ----------
-  const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+  const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffecd7ff, #f0c392ff)";
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const mutedColor = mode === "dark" ? "#ccc" : "#424242";
   const accentColor = "#ff5722"; // PayLand orange

@@ -10,7 +10,7 @@ export default function Product({ mode, toggleMode }) {
   const { slug } = useParams(); // "Card-Payment-Gateway" | "IBAN-Solutions" | "Crypto-to-Card-Servise"
 
   // Theme-aware colors (same logic as navbar)
-const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffffff, #f0c392ff)";
+const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #ffecd7ff, #f0c392ff)";
 
   
   const textColor = mode === "dark" ? "#fff" : "#212121";
