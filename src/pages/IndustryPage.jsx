@@ -13,9 +13,9 @@ import {
 // import tradingImg from "../../src/trading.png";       // <-- add your images
 // import igamingImg from "../../src/igaming.png";
 // import ecommerceImg from "../../src/ecommerce.png";
-import Tradeing from '../../src/Tradeing.png';
-import iGaming from '../../src/iGaming.png';
-import Ecommerce from '../../src/Ecommerce.png';
+import Tradeing from '../../src/Tradeing.jpg';
+import iGaming from '../../src/iGaming.jpg';
+import Ecommerce from '../../src/Ecommerce.jpg';
 // ---------------------------------------------
 
 export default function Industry({ mode, toggleMode }) {
@@ -176,7 +176,7 @@ export default function Industry({ mode, toggleMode }) {
               </Box>
 
               {/* ---------- IMAGE ---------- */}
-              <Box
+              {/* <Box
                 sx={{
                   flex: { md: 1 },
                   maxWidth: { md: "50%" },
@@ -208,6 +208,45 @@ export default function Industry({ mode, toggleMode }) {
                         mode === "dark" ? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0.3)"
                       }`,
                       transition: "box-shadow 0.3s ease",
+                    }}
+                  />
+                </Box>
+              </Box> */}
+
+
+                <Box
+                sx={{
+                  flex: { md: 1 },
+                  maxWidth: { md: "50%" },
+                  position: "relative",
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    width: "100%",
+                    height: 0,
+                    paddingBottom: "90%",
+                    overflow: "visible", // ✅ YE BADLO! hidden se visible karo
+                    // borderRadius hata do
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={industry.img}
+                    alt={title}
+                    sx={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      borderRadius: "24px", // ✅ Yahan hai curve
+                      boxShadow: `0 20px 40px ${
+                        mode === "dark" ? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0.3)"
+                      }`,
+                      transition: "all 0.3s ease",
                     }}
                   />
                 </Box>

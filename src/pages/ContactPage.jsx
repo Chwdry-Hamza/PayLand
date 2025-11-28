@@ -493,11 +493,11 @@ export default function ContactPage({ mode }) {
                   label={
                     <Typography variant="body2" sx={{ fontSize: "0.85rem", color: secondary }}>
                       By clicking "Submit", you consent to the collection and use of your information for purposes related to your request, in particular, you authorize us to contact you at the email address and/or phone number provided to follow up on this request. For more information on how we manage personal information, please see our{" "}
-                      <a href="#" style={{ color: accent, textDecoration: "underline" }}>
+                      <a href="/terms-and-conditions" style={{ color: accent, textDecoration: "underline" }}>
                         Terms and Conditions
                       </a>{" "}
                       and{" "}
-                      <a href="#" style={{ color: accent, textDecoration: "underline" }}>
+                      <a href="/privacy-policy" style={{ color: accent, textDecoration: "underline" }}>
                         Privacy Policy
                       </a>
                       .

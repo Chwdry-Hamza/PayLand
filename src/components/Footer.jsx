@@ -252,9 +252,12 @@ const handleLogoClick = (e) => {
                 <FooterCol
                   title="Developers"
                   items={[
-                    { label: "Documentation", href: "https://docs.praxis.tech" },
-                    { label: "PayLand Cashier API", href: "/api/cashier" },
-                    { label: "Hosted Payment Fields API", href: "/api/fields" },
+                    // { label: "Documentation", href: "https://docs.praxis.tech" },
+                    // { label: "PayLand Cashier API", href: "/api/cashier" },
+                    // { label: "Hosted Payment Fields API", href: "/api/fields" },
+                      { label: "Documentation", href: "/" },
+                    { label: "PayLand Cashier API", href: "/" },
+                    { label: "Hosted Payment Fields API", href: "/" },
                   ]}
                 />
               </Grid>

@@ -2,9 +2,11 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Box, Container, Typography, Button, Stack } from "@mui/material";
-import gateway from '../../src/gateway.png';
-import iban from '../../src/iban.png';
-import cryptotocard from '../../src/cryptotocard.png';
+import gateway from '../../src/gateway.jpg';
+import cryptotocard from '../../src/gateway1.jpg';
+
+import iban from '../../src/iban.jpg';
+// import cryptotocard from '../../src/cryptotocard.png';
 
 export default function Product({ mode, toggleMode }) {
   const { slug } = useParams(); // "Card-Payment-Gateway" | "IBAN-Solutions" | "Crypto-to-Card-Servise"
@@ -152,12 +154,10 @@ const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #f
                     fontSize: "1rem",
                     bgcolor: accentColor,
                     color: mode === "dark" ? "#000" : "#fff",
-                    "&:hover": {
-                      bgcolor:
-                        mode === "dark"
-                          ? "rgba(255,255,255,0.2)"
-                          : "#e0e0e0",
-                    },
+                  "&:hover": {
+  bgcolor: mode === "dark" ? "#fff":"black", 
+  color: mode === "dark" ? "black":"#fff",
+}
                   }}
                 >
                   Book a Demo
@@ -165,7 +165,7 @@ const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #f
               </Box>
 
               {/* IMAGE */}
-           <Box
+           {/* <Box
   sx={{
     flex: { md: 1 },
     maxWidth: { md: "50%" },
@@ -200,7 +200,46 @@ const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #f
       }}
     />
   </Box>
+</Box> */}
+        
+   <Box
+  sx={{
+    flex: { md: 1 },
+    maxWidth: { md: "50%" },
+    position: "relative",
+  }}
+>
+  <Box
+    sx={{
+      position: "relative",
+      width: "100%",
+      height: 0,
+      paddingBottom: "90%",
+      overflow: "visible", // ✅ YE BADLO! hidden se visible karo
+      // borderRadius hata do
+    }}
+  >
+    <Box
+      component="img"
+      src={card.img}
+      alt={title}
+      sx={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "24px", // ✅ Yahan hai curve
+        boxShadow: `0 20px 40px ${
+          mode === "dark" ? "rgba(0,0,0,0.6)" : "rgba(0,0,0,0.3)"
+        }`,
+        transition: "all 0.3s ease",
+      }}
+    />
+  </Box>
 </Box>
+
             </Stack>
           </Container>
         </Box>
