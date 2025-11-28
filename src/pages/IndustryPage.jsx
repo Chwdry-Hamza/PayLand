@@ -149,30 +149,28 @@ export default function Industry({ mode, toggleMode }) {
                 </Typography>
 
                 {/* BOOK A DEMO BUTTON */}
-                <Button
-                  component={Link}
-                  to="/contact"
-                  variant="contained"
-                  size="large"
-                  sx={{
-                    borderRadius: 50,
-                    px: 4,
-                    py: 1.5,
-                    textTransform: "none",
-                    fontWeight: 600,
-                    fontSize: "1rem",
-                    bgcolor: accentColor,
-                    color: mode === "dark" ? "#000" : "#fff",
-                    "&:hover": {
-                      bgcolor:
-                        mode === "dark"
-                          ? "rgba(255,255,255,0.2)"
-                          : "#e0e0e0",
-                    },
-                  }}
-                >
-                  Book a Demo
-                </Button>
+                    <Button
+                                component={Link}
+                                to="/contact"
+                                variant="contained"
+                                size="large"
+                                sx={{
+                                  borderRadius: 50,
+                                  px: 4,
+                                  py: 1.5,
+                                  textTransform: "none",
+                                  fontWeight: 600,
+                                  fontSize: "1rem",
+                                  bgcolor: accentColor,
+                                  color: mode === "dark" ? "#000" : "#fff",
+                                "&:hover": {
+                bgcolor: mode === "dark" ? "#fff":"black", 
+                color: mode === "dark" ? "black":"#fff",
+              }
+                                }}
+                              >
+                                Book a Demo
+                              </Button>
               </Box>
 
               {/* ---------- IMAGE ---------- */}
