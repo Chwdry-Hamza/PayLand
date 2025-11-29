@@ -241,7 +241,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
 </Box> */}
 
 
-<Box
+{/* <Box
   component="form"
   sx={{
     maxWidth: { xs: 600, sm: 800, md: 1200 },
@@ -324,7 +324,7 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
       </Box>
     </Grid>
   </Grid>
-</Box>
+</Box> */}
         <Box sx={{ textAlign: "center", maxWidth: 1300, mx: "auto" }}>
   {/* MAIN TITLE */}
   <Typography
