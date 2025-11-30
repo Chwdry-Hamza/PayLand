@@ -468,13 +468,14 @@ export default function PayLandNavbar({ mode, toggleMode }) {
             width: isMobile ? "100vw" : "auto",
             maxWidth: isMobile ? "100vw" : 1200,
             height: isMobile ? "auto" : "auto",
-            maxHeight: isMobile ? "1000vh" : "none",
+            maxHeight: isMobile ? "100vh" : "none",
             left: isMobile ? "0 !important" : "50% !important",
             transform: isMobile ? "none !important" : "translateX(-50%) !important",
             top: isMobile ? "0 !important" : "auto",
           },
         }}
         disableRestoreFocus
+        disableScrollLock
       >
         {isMobile && (
           <Box
@@ -503,17 +504,31 @@ export default function PayLandNavbar({ mode, toggleMode }) {
             alignItems: "center",
             justifyContent: "center",
             py: isMobile ? 2 : 1,
+            pt: isMobile ? 30 : 1, // 56px mobile, 48px desktop
             overflowY: isMobile ? "auto" : "visible",
-            "&::-webkit-scrollbar": isMobile ? { display: "none" } : { height: 6 },
-            "&::-webkit-scrollbar-thumb": isMobile
-              ? {}
-              : {
-                  bgcolor: mode === "dark" ? "#444" : "#ccc",
-                  borderRadius: 3,
-                },
-            msOverflowStyle: "none",
-            scrollbarWidth: "none",
-          }}
+            maxHeight: isMobile ? "90vh" : "none",
+          "&::-webkit-scrollbar": {
+        width: isMobile ? 6 : "auto",
+        display: isMobile ? "block" : "none",
+      },
+      "&::-webkit-scrollbar-track": {
+        bgcolor: mode === "dark" ? "#2a2a2a" : "#f1f1f1",
+        borderRadius: 3,
+      },
+      "&::-webkit-scrollbar-thumb": {
+        bgcolor: mode === "dark" ? "#555" : "#c1c1c1",
+        borderRadius: 3,
+        "&:hover": {
+          bgcolor: mode === "dark" ? "#666" : "#a8a8a8",
+        },
+      },
+          msOverflowStyle: isMobile ? "auto" : "none", // FIXED: Enable for MS browsers
+      scrollbarWidth: isMobile ? "thin" : "none", // FIXED: Enable for Firefox
+      // FIXED: Ensure cards can scroll properly
+      WebkitOverflowScrolling: "touch", // FIXED: iOS smooth scrolling
+      scrollBehavior: "smooth",
+      px: isMobile ? 1 : 0, // FIXED: Add padding for mobile
+    }}
         >
           {dropdownType === "products"
             ? renderCards(productBoxes)
