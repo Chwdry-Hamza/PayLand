@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Container, Typography,Button, Stack, Grid } from "@mui/material";
 import  Person  from "../../src/Boss.jpg";
 import  Ali  from "../../src/Ali.jpg";
@@ -8,8 +8,20 @@ import  Shaira  from "../../src/shaira.JPEG";
 import Payland from "../../src/Payland.jpg";
 import PaylandVideo from "../../src/PaylandVideo.mp4"
 const offices = [
-  { name: "LONDON OFFICE", location: "Covent Garden", flag: "CY" },
-  { name: "DUBAI OFFICE", location: "Dubai", flag: "AE" },
+  { 
+    name: "LONDON OFFICE", 
+    location: "Covent Garden", 
+    flag: "CY",
+    address: "71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, UNITED KINGDOM",
+    phone: "0300 2003410"
+  },
+  { 
+    name: "DUBAI OFFICE", 
+    location: "Dubai", 
+    flag: "AE",
+    address: "PO3, Building 10, Bay Square, Business Bay, Dubai, United Arab Emirates",
+    phone: "+971552710375"
+  },
   // { name: "KOSOVO OFFICE", location: "Pristina", flag: "XK" },
 ];
 
@@ -21,6 +33,18 @@ export default function GlobalPresence({ mode = "light" }) {
   const boxBg = isDark ? "#111111" : "#f8f8f8";
   const borderColor = accent;
 const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
+
+// Add state to track flipped cards
+const [flippedOffices] = useState({});
+
+
+
+const handleCopyAddress = (address) => {
+  navigator.clipboard.writeText(address);
+  // Optional: Show toast notification
+};
+
+
   return (
     <Box sx={{ background: bg, color: text, py: { xs: 6, md: 10 } }}>
       <Container maxWidth="lg">
@@ -58,113 +82,276 @@ const formBgColor = isDark ? "#1e1e1e" : "#f5f5f5"; // Light gray in light mode
           </Typography>
 
           {/* OFFICE CARDS */}
-          <Stack
-            direction={{ xs: "column", md: "row" }}
-            spacing={4}
-            justifyContent="center"
-            alignItems="stretch"
+        
+
+  <Stack
+  direction={{ xs: "column", md: "row" }}
+  spacing={4}
+  justifyContent="center"
+  alignItems="stretch"
+>
+  {offices.map((office) => {
+    const isFlipped = flippedOffices[office.name];
+    
+    return (
+      <Box
+        key={office.name}
+        sx={{
+          flex: 1,
+          minHeight: 280,
+          perspective: "1000px",
+          // ✅ REMOVED: cursor: "pointer"
+          // ✅ REMOVED: onClick handler
+        }}
+      >
+        {/* Flip Container */}
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            height: "100%",
+            minHeight: 280,
+            transformStyle: "preserve-3d",
+            transition: "transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            // ✅ AUTO-FLIP ON HOVER
+            transform: isFlipped ? "rotateY(180deg)" : "rotateY(0deg)",
+            "&:hover": {
+              transform: "rotateY(180deg)",
+            },
+            // ✅ AUTO-FLIP BACK WHEN MOUSE LEAVES (OPTIONAL)
+            "&:not(:hover)": {
+              transform: "rotateY(0deg)",
+            },
+          }}
+        >
+          {/* FRONT SIDE */}
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              bgcolor: boxBg,
+              border: `3px solid ${borderColor}`,
+              borderRadius: "12px",
+              p: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              backfaceVisibility: "hidden",
+              // ✅ REMOVED: All hover effects from front
+              transition: "all 0.3s ease",
+            }}
           >
-            {offices.map((office) => (
+            {/* FLAG CIRCLE */}
+            <Box
+              className="flag"
+              sx={{
+                position: "relative",
+                width: 60,
+                height: 60,
+                mb: 2,
+                overflow: "hidden",
+                borderRadius: "50%",
+                boxShadow: "0 4px 12px rgba(255,87,34,0.3)",
+              }}
+            >
               <Box
-                key={office.name}
+                className="flag-bg"
                 sx={{
-                  flex: 1,
-                  minHeight: 220,
-                  bgcolor: boxBg,
-                  border: `3px solid ${borderColor}`,
-                  borderRadius: "12px",
-                  p: 4,
+                  position: "absolute",
+                  inset: 0,
+                  bgcolor: accent,
+                  transition: "background-color 0.3s ease",
+                }}
+              />
+              <Typography
+                className="flag-text"
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  width: "100%",
+                  height: "100%",
                   display: "flex",
-                  flexDirection: "column",
                   alignItems: "center",
                   justifyContent: "center",
-                  transition: "all 0.3s ease",
-                  cursor: "default",
-                  "&:hover": {
-                    bgcolor: accent,
-                    color: "#fff",
-                    transform: "translateY(-8px)",
-                    boxShadow: "0 12px 24px rgba(255,87,34,0.3)",
-                    "& .location": { color: "#fff" },
-                    "& .flag-bg": { bgcolor: "#fff" },
-                    "& .flag-text": { color: accent },
-                  },
+                  fontWeight: 900,
+                  fontSize: "1.4rem",
+                  color: "#fff",
+                  transition: "color 0.3s ease",
                 }}
               >
+                {office.flag}
+              </Typography>
+            </Box>
 
-                {/* FLAG CIRCLE */}
-                <Box
-                  className="flag"
-                  sx={{
-                    position: "relative",
-                    width: 60,
-                    height: 60,
-                    mb: 2,
-                    overflow: "hidden",
-                    borderRadius: "50%",
-                    boxShadow: "0 4px 12px rgba(255,87,34,0.3)",
-                  }}
-                >
-                  {/* Background Layer */}
-                  <Box
-                    className="flag-bg"
-                    sx={{
-                      position: "absolute",
-                      inset: 0,
-                      bgcolor: accent,
-                      transition: "background-color 0.3s ease",
-                    }}
-                  />
+            {/* OFFICE NAME */}
+            <Typography
+              variant="h5"
+              sx={{
+                fontWeight: 900,
+                letterSpacing: "0.1em",
+                mb: 1,
+                fontSize: "1.3rem",
+              }}
+            >
+              {office.name}
+            </Typography>
 
-                  {/* Flag Text */}
-                  <Typography
-                    className="flag-text"
-                    sx={{
-                      position: "relative",
-                      zIndex: 1,
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontWeight: 900,
-                      fontSize: "1.4rem",
-                      color: "#fff",
-                      transition: "color 0.3s ease",
-                    }}
-                  >
-                    {office.flag}
-                  </Typography>
-                </Box>
+            {/* LOCATION */}
+            <Typography
+              className="location"
+              variant="body1"
+              sx={{
+                fontWeight: 600,
+                color: isDark ? "#999" : "#555",
+                fontSize: "1.1rem",
+              }}
+            >
+              {office.location}
+            </Typography>
+          </Box>
 
-                {/* OFFICE NAME */}
+          {/* BACK SIDE */}
+          <Box
+            sx={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              bgcolor: accent,
+              border: `3px solid ${borderColor}`,
+              borderRadius: "12px",
+              p: 3,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+              backfaceVisibility: "hidden",
+              transform: "rotateY(180deg)",
+              color: "#fff",
+              textAlign: "center",
+              transition: "all 0.3s ease",
+            }}
+          >
+            {/* FLAG CIRCLE - BACK */}
+            {/* <Box
+              sx={{
+                position: "relative",
+                width: 50,
+                height: 50,
+                mb: 2,
+                overflow: "hidden",
+                borderRadius: "50%",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+                bgcolor: "#fff",
+              }}
+            >
+              <Typography
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontWeight: 900,
+                  fontSize: "1.2rem",
+                  color: accent,
+                }}
+              >
+                {office.flag}
+              </Typography>
+            </Box> */}
+
+            {/* ADDRESS */}
+            <Box sx={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", mb: 2 }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontWeight: 700,
+                  mb: 1.5,
+                  fontSize: "1.1rem",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                Full Address
+              </Typography>
+              <Box
+                sx={{
+                  bgcolor: "rgba(255,255,255,0.1)",
+                  borderRadius: "8px",
+                  p: 2,
+                  maxHeight: 100,
+                  overflowY: "auto",
+                  border: "1px solid rgba(255,255,255,0.2)",
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    bgcolor: "rgba(255,255,255,0.15)",
+                    transform: "scale(1.02)",
+                  },
+                }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleCopyAddress(office.address);
+                }}
+              >
                 <Typography
-                  variant="h5"
+                  variant="body2"
                   sx={{
-                    fontWeight: 900,
-                    letterSpacing: "0.1em",
-                    mb: 1,
-                    fontSize: "1.3rem",
+                    fontSize: "0.85rem",
+                    lineHeight: 1.5,
+                    fontWeight: 500,
+                    whiteSpace: "pre-line",
                   }}
                 >
-                  {office.name}
-                </Typography>
-
-                {/* LOCATION */}
-                <Typography
-                  className="location"
-                  variant="body1"
-                  sx={{
-                    fontWeight: 600,
-                    color: isDark ? "#999" : "#555",
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  {office.location}
+                  {office.address}
                 </Typography>
               </Box>
-            ))}
-          </Stack>
+            </Box>
+
+            {/* PHONE NUMBER */}
+            <Box
+              sx={{
+                width: "100%",
+                bgcolor: "rgba(255,255,255,0.1)",
+                borderRadius: "8px",
+                p: 2,
+                border: "1px solid rgba(255,255,255,0.2)",
+                cursor: "pointer",
+                transition: "all 0.2s ease",
+                "&:hover": {
+                  bgcolor: "rgba(255,255,255,0.15)",
+                  transform: "scale(1.02)",
+                },
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                navigator.clipboard.writeText(office.phone);
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  color: "#fff",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 1,
+                }}
+              >
+                📞 {office.phone}
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+    );
+  })}
+</Stack>
 
            {/* <Box
                 component="form"

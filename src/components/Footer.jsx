@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Grid,
@@ -255,9 +255,11 @@ const handleLogoClick = (e) => {
                     // { label: "Documentation", href: "https://docs.praxis.tech" },
                     // { label: "PayLand Cashier API", href: "/api/cashier" },
                     // { label: "Hosted Payment Fields API", href: "/api/fields" },
-                      { label: "Documentation", href: "/" },
-                    { label: "PayLand Cashier API", href: "/" },
-                    { label: "Hosted Payment Fields API", href: "/" },
+                      { label: "Documentation", href: "https://docs.payland.info/01-api-overview.html" },
+                    { label: "PayLand Authentication API", href: "https://docs.payland.info/02-api-auth1.html" },
+                    { label: "PayLand Transactions API", href: "https://docs.payland.info/08-api-transactions1.html" },
+                    { label: "PayLand Callbacks API", href: "https://docs.payland.info/09-api-callbacks1.html" },
+
                   ]}
                 />
               </Grid>

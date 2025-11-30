@@ -39,19 +39,19 @@ export default function Industry({ mode, toggleMode }) {
   const industries = {
     trading: {
       img: Tradeing,
-      subtitle: "Empower Traders → Coming Soon",
+      subtitle: "Empower Traders",
       description:
         "Empower high-frequency traders with ultra-low latency payment rails.\nSeamlessly settle cross-border trades, manage margin accounts, and integrate with any exchange via PayLand’s robust gateway.",
     },
     igaming: {
       img: iGaming,
-      subtitle: "Enable iGaming Payments → Coming Soon",
+      subtitle: "Enable iGaming Payments",
       description:
         "Secure, compliant, and instant payouts for the iGaming world.\nAccept deposits from any region, process withdrawals in seconds, and stay ahead of regulatory demands with PayLand’s all-in-one solution.",
     },
     ecommerce: {
       img: Ecommerce,
-      subtitle: "Simplify Online Payments → Coming Soon",
+      subtitle: "Simplify Online Payments",
       description:
         "Frictionless checkout for every shopper, everywhere.\nAccept cards, IBAN transfers, and crypto at the same time, reduce cart abandonment, and boost conversion with PayLand’s intelligent payment orchestration.",
     },

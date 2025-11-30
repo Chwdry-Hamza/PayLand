@@ -38,7 +38,7 @@ const navLinks = [
 const productBoxes = [
   {
     title: "Card Payment Gateway",
-    subtitle: "Request Integration → Coming Soon",
+    subtitle: "Request Integration",
     img: gateway,
     slug: "Card-Payment-Gateway",
     description:
@@ -46,7 +46,7 @@ const productBoxes = [
   },
   {
     title: "IBAN Solutions",
-    subtitle: "Open Your IBAN → Coming Soon",
+    subtitle: "Open Your IBAN",
     img: iban,
     slug: "IBAN-Solutions",
     description:
@@ -54,7 +54,7 @@ const productBoxes = [
   },
   {
     title: "Crypto to Card Service",
-    subtitle: "Apply Your Card → Coming Soon",
+    subtitle: "Apply Your Card",
     img: cryptotocard,
     slug: "Crypto-to-Card-Servise",
     description:
@@ -65,7 +65,7 @@ const productBoxes = [
 const industryBoxes = [
   {
     title: "Trading (High-Volume Payments)",
-    subtitle: "Empower Traders → Coming Soon",
+    subtitle: "Empower Traders",
     img: Tradeing,
     slug: "trading",
     description:
@@ -73,7 +73,7 @@ const industryBoxes = [
   },
   {
     title: "iGaming (Gaming & Betting)",
-    subtitle: "Enable iGaming Payments → Coming Soon",
+    subtitle: "Enable iGaming Payments",
     img: iGaming,
     slug: "igaming",
     description:
@@ -81,7 +81,7 @@ const industryBoxes = [
   },
   {
     title: "E-commerce (Online Retail)",
-    subtitle: "Simplify Online Payments → Coming Soon",
+    subtitle: "Simplify Online Payments",
     img: Ecommerce,
     slug: "ecommerce",
     description:

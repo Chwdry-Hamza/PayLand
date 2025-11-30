@@ -1,6 +1,7 @@
 'use client';
 
 import React from "react";
+import { useState } from "react";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -14,7 +15,10 @@ import LockIcon from "@mui/icons-material/Lock";
 import BoltIcon from "@mui/icons-material/Bolt";
 import CategoryIcon from "@mui/icons-material/Category";  
 import { Link } from "react-router-dom";
-
+import {Popover} from "@mui/material";
+import PaymentIcon from "@mui/icons-material/Payment";
+import AppleIcon from "@mui/icons-material/Apple";
+import GoogleIcon from "@mui/icons-material/Google";
 import {
   LineChart,
   Line,
@@ -114,6 +118,28 @@ const bgColor =
   const textColor = mode === "dark" ? "#fff" : "#212121";
   const mutedColor = mode === "dark" ? "#ccc" : "#666";
 const strokeColor = mode === "dark" ? "white" : "black";
+
+const [anchorEl, setAnchorEl] = useState(null);
+const [currentPaymentName, setCurrentPaymentName] = useState(null);
+
+const handlePopoverOpen = (event, name) => {
+  setAnchorEl(event.currentTarget);
+  setCurrentPaymentName(name);
+};
+
+const handlePopoverClose = () => {
+  setAnchorEl(null);
+  setCurrentPaymentName(null);
+};
+
+const open = Boolean(anchorEl);
+
+const paymentIcons = [
+  { icon: <AppleIcon />, name: "Apple Pay", bgColor: "#000000" },
+  { icon: <GoogleIcon />, name: "Google Pay", bgColor: "#5f6368" },
+  { icon: <PaymentIcon />, name: "Mastercard", bgColor: "#eb001b" },
+  { icon: "VISA", name: "Visa", bgColor: "#1a237e" },
+];
   return (
     <Box
       component="main"
@@ -324,27 +350,66 @@ const strokeColor = mode === "dark" ? "white" : "black";
                   <Typography variant="body2" sx={{ mb: 2, color: mutedColor }}>
                     Trusted by over 6,000 merchants
                   </Typography>
-                  <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
-                    {["🌐", "💳", "💳", "💳", "VISA"].map((icon, i) => (
-                      <Box
-                        key={i}
-                        sx={{
-                          width: 40,
-                          height: 40,
-                          bgcolor: mode === "dark" ? "#333" : "#f5f5f5",
-                          borderRadius: 2,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          color: icon === "VISA" ? "#fff" : mutedColor,
-                          fontWeight: icon === "VISA" ? 600 : "inherit",
-                          backgroundColor: icon === "VISA" ? "#1a237e" : undefined,
-                        }}
-                      >
-                        {icon}
-                      </Box>
-                    ))}
-                  </Stack>
+           <Stack direction="row" spacing={2} useFlexGap flexWrap="wrap">
+  {paymentIcons.map(({ icon, name, bgColor }, i) => (
+    <Box
+      key={i}
+      onMouseEnter={(e) => handlePopoverOpen(e, name)}
+      onMouseLeave={handlePopoverClose}
+      sx={{
+        width: 40,
+        height: 40,
+        bgcolor: mode === "dark" ? "#333" : "#f5f5f5",
+        borderRadius: 2,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "#fff",
+        fontWeight: 600,
+        backgroundColor: bgColor,
+        transition: "all 0.2s ease",
+        cursor: "pointer",
+        position: "relative",
+        "&:hover": {
+          transform: "translateY(-2px)",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+        },
+      }}
+    >
+      {typeof icon === "string" ? (
+        <Box sx={{ fontSize: "10px", letterSpacing: "-0.5px", fontWeight: 700 }}>
+          {icon}
+        </Box>
+      ) : (
+        icon
+      )}
+    </Box>
+  ))}
+  
+  <Popover
+    open={open}
+    anchorEl={anchorEl}
+    onClose={handlePopoverClose}
+    anchorOrigin={{
+      vertical: "bottom",
+      horizontal: "center",
+    }}
+    transformOrigin={{
+      vertical: "top",
+      horizontal: "center",
+    }}
+    sx={{
+      pointerEvents: "none",
+    }}
+    disableRestoreFocus
+  >
+    <Box sx={{ p: 1, bgcolor: "common.black", color: "white", borderRadius: 1 }}>
+      <Typography variant="caption" fontWeight={600}>
+        {currentPaymentName}
+      </Typography>
+    </Box>
+  </Popover>
+</Stack>
                 </CardContent>
               </HoverCard>
             </Box>

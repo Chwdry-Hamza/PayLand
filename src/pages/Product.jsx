@@ -31,19 +31,19 @@ const bgColor = mode === "dark" ? "#000" : "linear-gradient(90deg, #f0c392ff, #f
   const cards = {
     "Card-Payment-Gateway": {
       img: gateway,
-      subtitle: "Request Integration → Coming Soon",
+      subtitle: "Request Integration",
       description:
         "Experience the future of global payments.\nPayland Gateway connects businesses to the world through secure, compliant, and lightning-fast transactions.\nAccept Visa, Mastercard, and alternative methods with precision, trust, and global scalability.",
     },
     "IBAN-Solutions": {
       img: iban,
-      subtitle: "Open Your IBAN → Coming Soon",
+      subtitle: "Open Your IBAN",
       description:
         "Your dedicated banking identity — anywhere in the world.\nGain exclusive access to personalized IBAN accounts for effortless transfers, settlements, and international fund management — all within Payland’s trusted financial infrastructure.",
     },
     "Crypto-to-Card-Servise": {
       img: cryptotocard,
-      subtitle: "Apply Your Card → Coming Soon",
+      subtitle: "Apply Your Card",
       description:
         "Seamless bridge between digital assets and real-world spending.\nConvert crypto into fiat instantly and enjoy true financial freedom.\nSpend globally with your Payland Card — powered by Visa and Mastercard, designed for the next generation of finance.",
     },
