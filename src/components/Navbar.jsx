@@ -20,12 +20,13 @@ import CloseIcon from "@mui/icons-material/Close";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { Link } from "react-router-dom";
-import gateway from '../../src/gateway.png';
-import iban from '../../src/iban.png';
-import cryptotocard from '../../src/cryptotocard.png';
-import Tradeing from '../../src/Tradeing.png';
-import iGaming from '../../src/iGaming.png';
-import Ecommerce from '../../src/Ecommerce.png';
+import gateway from '../../src/gateway.jpg';
+import iban from '../../src/iban.jpg';
+// import cryptotocard from '../../src/cryptotocard.png';
+import cryptotocard from '../../src/gateway1.jpg';
+import Tradeing from '../../src/Tradeing.jpg';
+import iGaming from '../../src/iGaming.jpg';
+import Ecommerce from '../../src/Ecommerce.jpg';
 // Updated navLinks: Removed "Company", Added "About Us"
 const navLinks = [
   { label: "Products", dropdown: "products" },
@@ -286,8 +287,8 @@ export default function PayLandNavbar({ mode, toggleMode }) {
               alt={box.title}
               sx={{
                 width: "100%",
-                height: isMobile ? 180 : 160,
-                objectFit: "cover",
+                height: isMobile ? 280 : 220,
+                objectFit: "contain",
                 transition: "opacity 0.3s ease",
               }}
               className="card-image"
@@ -504,7 +505,7 @@ export default function PayLandNavbar({ mode, toggleMode }) {
             alignItems: "center",
             justifyContent: "center",
             py: isMobile ? 2 : 1,
-            pt: isMobile ? 30 : 1, // 56px mobile, 48px desktop
+            pt: isMobile ? 60 : 1, // 56px mobile, 48px desktop
             overflowY: isMobile ? "auto" : "visible",
             maxHeight: isMobile ? "90vh" : "none",
           "&::-webkit-scrollbar": {
