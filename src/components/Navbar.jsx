@@ -505,7 +505,7 @@ export default function PayLandNavbar({ mode, toggleMode }) {
             alignItems: "center",
             justifyContent: "center",
             py: isMobile ? 2 : 1,
-            pt: isMobile ? 60 : 1, // 56px mobile, 48px desktop
+            pt: isMobile ? 70 : 1, // 56px mobile, 48px desktop
             overflowY: isMobile ? "auto" : "visible",
             maxHeight: isMobile ? "90vh" : "none",
           "&::-webkit-scrollbar": {
