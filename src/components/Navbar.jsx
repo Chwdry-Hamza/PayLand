@@ -33,6 +33,7 @@ const navLinks = [
   { label: "Industries", dropdown: "industries" },
   // { label: "About Us", dropdown: "about" },
   { label: "About Us", href: "/about/who-we-are" },
+  { label: "Companies", href: "/company" },
   { label: "Developers", href: "https://docs.payland.info/01-api-overview.html" },
 ];
 
