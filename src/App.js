@@ -15,6 +15,7 @@ import TermsCnditions from "./pages/TremsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Cookies from "./pages/Cookies";
 import InformationSecurityPolicy from "./pages/InformationSecurityPolicy";
+import Company from "./pages/Company";
 
 export default function App({ mode, toggleMode }) {
   return (
@@ -27,6 +28,8 @@ export default function App({ mode, toggleMode }) {
           <Route path="/product/:slug" element={<Product mode={mode} toggleMode={toggleMode} />} />
           <Route path="/industry/:slug" element={<IndustryPage mode={mode} toggleMode={toggleMode} />} />
           <Route path="/contact" element={<ContactPage mode={mode} />} />
+          <Route path="/company" element={<Company mode={mode} />} />
+
           <Route path="/terms-and-conditions" element={<TermsCnditions mode={mode} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy mode={mode} />} />
           <Route path="/Cookies" element={<Cookies mode ={mode}/>}/>

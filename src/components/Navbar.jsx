@@ -33,7 +33,7 @@ const navLinks = [
   { label: "Industries", dropdown: "industries" },
   // { label: "About Us", dropdown: "about" },
   { label: "About Us", href: "/about/who-we-are" },
-  { label: "Developers", href: "#developers" },
+  // { label: "Developers", href: "/company" },
 ];
 
 const productBoxes = [

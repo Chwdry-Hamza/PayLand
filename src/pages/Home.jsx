@@ -203,10 +203,12 @@ const paymentIcons = [
               >
                 Seamless
                 <br />
-                <Box component="span" sx={{ color:
-              mode === "dark"
-                ? "white"
-                : "black", }}>
+                <Box component="span" 
+              //   sx={{ color:
+              // mode === "dark"
+              //   ? "white"
+              //   : "black", }}
+                >
                   Payments
                 </Box>
                 <br />
@@ -262,23 +264,40 @@ const paymentIcons = [
                   <Typography variant="subtitle2" color="text.secondary" gutterBottom>
                     Transaction graphic
                   </Typography>
-                  <Box sx={{ height: { xs: 100, sm: 130 } }}>
-                    <ResponsiveContainer width="100%" height="100%">
-                      <LineChart data={chartData}>
-                       <CartesianGrid strokeDasharray="3 3" stroke={mode === "dark" ? "#333" : "#f0f0f0"} />
-                        <XAxis dataKey="name" tick={{ fontSize: 12 }} />
-                        <YAxis tick={{ fontSize: 12 }} />
-                        <Tooltip />
-                        <Line
-                          type="monotone"
-                          dataKey="value"
-                          stroke={strokeColor}
-                          strokeWidth={3}
-                          dot={false}
-                        />
-                      </LineChart>
-                    </ResponsiveContainer>
-                  </Box>
+              <Box sx={{ height: { xs: 100, sm: 130 } }}>
+  <ResponsiveContainer width="100%" height="100%">
+    <LineChart data={chartData}>
+      <CartesianGrid
+        strokeDasharray="3 3"
+        stroke={mode === "dark" ? "#333" : "#f0f0f0"}
+      />
+      <XAxis dataKey="name" tick={{ fontSize: 12 }} />
+      <YAxis tick={{ fontSize: 12 }} />
+
+      <Tooltip
+        contentStyle={{
+          backgroundColor: mode === "dark" ? "#000" : "#fff",
+          border: "1px solid #555",
+        }}
+        itemStyle={{
+          color: mode === "dark" ? "#fff" : "#000",
+        }}
+        labelStyle={{
+          color: mode === "dark" ? "#fff" : "#000",
+        }}
+      />
+
+      <Line
+        type="monotone"
+        dataKey="value"
+        stroke={strokeColor}
+        strokeWidth={3}
+        dot={false}
+      />
+    </LineChart>
+  </ResponsiveContainer>
+</Box>
+
                   <Typography variant="h6" sx={{ mt: 1, fontWeight: 600 }}>
                     $ 6,220,342.00
                   </Typography>
