@@ -68,12 +68,13 @@ const navigate = useNavigate();
       url: "https://www.facebook.com/profile.php?id=61581868289945",
       hoverBg: "#1877F2",
     },
-   {
-  name: "Gmail",
+  {
+  name: "Outlook",
   icon: <EmailIcon fontSize="small" />,
-  url: "mailto:cristinemanuawaan@payland.info",
-  hoverBg: "#1877F2",
+  url: "https://outlook.office.com/mail/deeplink/compose?to=cristinemanuawaan@payland.info",
+  hoverBg: "#0072C6",
 }
+
 
   ];
 const handleLogoClick = (e) => {
