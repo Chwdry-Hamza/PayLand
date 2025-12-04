@@ -57,12 +57,6 @@ const navigate = useNavigate();
       hoverBg: "#0077B5",
     },
     {
-      name: "X (Twitter)",
-      icon: <TwitterIcon fontSize="small" />,
-      url: "https://twitter.com/praxistech",
-      hoverBg: "#000000",
-    },
-    {
       name: "Instagram",
       icon: <InstagramIcon fontSize="small" />,
       url: "https://www.instagram.com/payland_official/",
