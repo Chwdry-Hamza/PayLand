@@ -38,7 +38,12 @@ import TipBomlight from "../../src/Light Mode/TipBom/TipBomLogo-2.png";
 import TipBomhoverlight from "../../src/Light Mode/TipBom/TipBomLogo-1.png";
 import TipBomdark from "../../src/Dark Mode/TipBom/TipBomLogo-3.png";
 import TipBomhoverdark from "../../src/Dark Mode/TipBom/TipBomLogo-4.png";
-import RedCasino from "../../src/7RedCasino.png";
+
+import Betconstructlight from "../../src/Light Mode/Betconstruct/BetconstructLogo-2.png";
+import Betconstructhoverlight from "../../src/Light Mode/Betconstruct/BetconstructLogo-1.png";
+import Betconstructdark from "../../src/Dark Mode/Betconstruct/BetconstructLogo-3.png";
+import Betconstructhoverdark from "../../src/Dark Mode/Betconstruct/BetconstructLogo-4.png";
+
 
 import PronetGaming from "../../src/PronetGaming.png";
 import EveryMatrix from "../../src/EveryMatrix.png";
@@ -111,7 +116,7 @@ export default function Company({ mode }) {
     hoverDark: IQsofthoverdark,
     description:
       "iGaming software, solutions, content and services for online casino.",
-    link: "https://www.salesforce.com",
+    link: "https://www.iqsoftllc.com/",
   },
   {
     name: "Pronet Gaming",
@@ -121,7 +126,7 @@ export default function Company({ mode }) {
     hoverDark: PronetGaminghoverdark,
     description:
       "iGaming software, solutions, content and services for online casino.",
-    link: "https://www.zendesk.com",
+    link: "https://pronetgaming.com/en/",
   },
   {
     name: "EveryMatrix",
@@ -131,7 +136,7 @@ export default function Company({ mode }) {
     hoverDark: EveryMatrixhoverdark,
     description:
       "iGaming software, solutions, content and services for online casino.",
-    link: "https://www.hubspot.com",
+    link: "https://everymatrix.com/",
   },
   {
     name: "Digitain",
@@ -141,7 +146,7 @@ export default function Company({ mode }) {
     hoverDark: Digitainhoverdark,
     description:
       "Gaming software, solutions, content and services for online casino.",
-    link: "https://www.softgamings.com",
+    link: "https://www.digitain.com/",
   },
   {
     name: "TipBom",
@@ -151,14 +156,14 @@ export default function Company({ mode }) {
     hoverDark: TipBomhoverdark,
     description:
       "Gaming software, solutions, content and services for online casino.",
-    link: "https://www.softgamings.com",
+    link: "https://cutt.ly/TipBomGiris",
   },
-  { name: "7RedCasino",
-    light: RedCasino,
-    dark: RedCasino,
-    hoverLight: RedCasino,
-    hoverDark: RedCasino,
-    description: "Gaming software, solutions, content and services for online casino.", link: "https://www.softgamings.com", },
+  { name: "Betconstruct",
+    light: Betconstructlight,
+    dark: Betconstructdark,
+    hoverLight: Betconstructhoverlight,
+    hoverDark: Betconstructhoverdark,
+    description: "iGaming provider: 50+ products, 15+ licences & 500+ payment methods.", link: "https://www.betconstruct.com", },
 ];
 
   return (
