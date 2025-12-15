@@ -371,7 +371,7 @@ export default function Company({ mode }) {
                 <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
                   Navigate transactions intelligently and enhance your approvals by routing your payments through the most optimized pathways available.
                 </Typography>
-                <Button
+                {/* <Button
                   variant="outlined"
                   target="_blank"
                   rel="noopener"
@@ -391,7 +391,7 @@ export default function Company({ mode }) {
                   }}
                 >
                   Learn More
-                </Button>
+                </Button> */}
               </Box>
             </Box>
 
@@ -424,7 +424,7 @@ export default function Company({ mode }) {
                 <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
                   Utilize our advanced suite and boost your approval ratios. Integrated into all our products, each feature is immediately ready to use.
                 </Typography>
-                <Button
+                {/* <Button
                   variant="outlined"
                   target="_blank"
                   rel="noopener"
@@ -444,7 +444,7 @@ export default function Company({ mode }) {
                   }}
                 >
                   Learn More
-                </Button>
+                </Button> */}
               </Box>
             </Box>
 
@@ -477,7 +477,7 @@ export default function Company({ mode }) {
                 <Typography variant="body1" sx={{ color: isDark ? "#ccc" : "#555", lineHeight: 1.7 }}>
                   Built for businesses with their own cashier page, connect directly with our API and expand your payment solutions and global presence with ease.
                 </Typography>
-                <Button
+                {/* <Button
                   variant="outlined"
                   target="_blank"
                   rel="noopener"
@@ -497,7 +497,7 @@ export default function Company({ mode }) {
                   }}
                 >
                   Learn More
-                </Button>
+                </Button> */}
               </Box>
             </Box>
           </Box>

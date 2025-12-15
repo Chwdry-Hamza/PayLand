@@ -42,7 +42,8 @@ export default function ContactPage({ mode }) {
       [name]: type === "checkbox" ? checked : value,
     }));
   };
-
+// 04fc7581-b10b-480a-8638-402d3bd29409
+// f0d89692-bb53-4dac-8bf0-068c83c50d73
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.consent) {
@@ -51,18 +52,15 @@ export default function ContactPage({ mode }) {
     }
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("https://pay-land-backoffic.vercel.app/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: "f0d89692-bb53-4dac-8bf0-068c83c50d73",
-          ...formData,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
-      if (data.success) {
-        alert("Message sent!");
+      if (res.ok) {
+        alert("Message sent successfully!");
         setFormData({
           firstName: "", lastName: "", email: "", country: "", phone: "",
           jobTitle: "", website: "", businessType: "", companySize: "",
@@ -70,7 +68,7 @@ export default function ContactPage({ mode }) {
           hearAboutUs: "", consent: false, newsletter: false,
         });
       } else {
-        alert("Error. Please try again.");
+        alert("Error: " + (data.message || "Please try again."));
       }
     } catch (err) {
       alert("Network error. Please try again later.");
