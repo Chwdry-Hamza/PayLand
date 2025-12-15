@@ -29,6 +29,8 @@ function FooterCol({ title, items }) {
           <Link
             key={idx}
             href={it.href || "#"}
+            target={it.href?.startsWith("http") ? "_blank" : undefined}
+            rel={it.href?.startsWith("http") ? "noopener noreferrer" : undefined}
             underline="none"
             sx={{
               color: "text.secondary",

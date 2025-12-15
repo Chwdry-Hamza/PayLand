@@ -187,6 +187,8 @@ export default function PayLandNavbar({ mode, toggleMode }) {
           <Button
             key={l.label}
             href={l.href}
+            target={l.href?.startsWith("http") ? "_blank" : undefined}
+            rel={l.href?.startsWith("http") ? "noopener noreferrer" : undefined}
             sx={{
               color: linkColor,
               fontWeight: 500,
@@ -573,6 +575,8 @@ export default function PayLandNavbar({ mode, toggleMode }) {
               <ListItem key={link.label} disablePadding sx={{ mb: 1 }}>
                 <ListItemButton
                   href={link.href || "#"}
+                  target={link.href?.startsWith("http") ? "_blank" : undefined}
+                  rel={link.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                   onClick={link.dropdown ? (e) => handleClick(e, link.dropdown) : undefined}
                   sx={{
                     borderRadius: 2,
