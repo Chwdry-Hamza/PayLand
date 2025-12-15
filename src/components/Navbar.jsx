@@ -34,7 +34,8 @@ const navLinks = [
   // { label: "About Us", dropdown: "about" },
   { label: "About Us", href: "/about/who-we-are" },
   { label: "Companies", href: "/company" },
-  { label: "Developers", href: "https://docs.payland.info/01-api-overview.html" },
+  { label: "Developers", href: "https://docs.payland.info/1-introduction.html" },
+  
 ];
 
 const productBoxes = [

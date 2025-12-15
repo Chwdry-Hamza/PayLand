@@ -251,10 +251,10 @@ const handleLogoClick = (e) => {
                     // { label: "Documentation", href: "https://docs.praxis.tech" },
                     // { label: "PayLand Cashier API", href: "/api/cashier" },
                     // { label: "Hosted Payment Fields API", href: "/api/fields" },
-                      { label: "Documentation", href: "https://docs.payland.info/01-api-overview.html" },
-                    { label: "PayLand Authentication API", href: "https://docs.payland.info/02-api-auth1.html" },
-                    { label: "PayLand Transactions API", href: "https://docs.payland.info/08-api-transactions1.html" },
-                    { label: "PayLand Callbacks API", href: "https://docs.payland.info/09-api-callbacks1.html" },
+                      { label: "Documentation", href: "https://docs.payland.info/1-introduction.html" },
+                    { label: "PayLand Bank API", href: "https://docs.payland.info/2-banks-api.html" },
+                    { label: "PayLand Deposit API", href: "https://docs.payland.info/3-deposit.html" },
+                    { label: "PayLand Callbacks API", href: "https://docs.payland.info/4-callback.html" },
 
                   ]}
                 />
